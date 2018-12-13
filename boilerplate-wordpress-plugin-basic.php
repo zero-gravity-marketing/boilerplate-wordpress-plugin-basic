@@ -31,7 +31,7 @@ if ( !class_exists( 'ZGM_Basic_Plugin' ) ) {
             * @link https://developer.wordpress.org/reference/functions/register_activation_hook/
             */
             register_activation_hook( __FILE__, function(){
-                // clear the permalinks after the post type has been registered
+                // clear the permalinks
                 flush_rewrite_rules();
                 register_uninstall_hook( __FILE__, array($this,'register_uninstall_hook') );
             });
@@ -41,7 +41,7 @@ if ( !class_exists( 'ZGM_Basic_Plugin' ) ) {
             * @link https://developer.wordpress.org/reference/functions/register_deactivation_hook/
             */
             register_deactivation_hook( __FILE__, function(){
-                // clear the permalinks to remove our post type's rules from the database
+                // clear the permalinks
                 flush_rewrite_rules();
             });
 
@@ -80,7 +80,7 @@ if ( !class_exists( 'ZGM_Basic_Plugin' ) ) {
         public function body_class($classes)
         {
           // Add page slug if it doesn't exist
-          if (is_single() || is_page() && !is_front_page()) {
+          if (is_single() || is_page()) {
             if (!in_array(basename(get_permalink()), $classes)) {
               $classes[] = basename(get_permalink());
             }
@@ -101,7 +101,7 @@ if ( !class_exists( 'ZGM_Basic_Plugin' ) ) {
 }
 
 /**
- * Initialize all Plugin Class Functions
+ * Initialize all Plugin Class Methods
  */
 if ( class_exists( 'ZGM_Basic_Plugin' ) ) {
     $ZGM_Basic_Plugin = new ZGM_Basic_Plugin();
