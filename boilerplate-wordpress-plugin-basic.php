@@ -13,6 +13,10 @@ Author URI: https://zerogravitymarketing.com
 Text Domain: zgm
 */
 
+if ( ! defined( 'ABSPATH' ) ) {
+    die( 'Invalid request.' );
+}
+
 if ( !class_exists( 'ZGM_Basic_Plugin' ) ) {
 
     class ZGM_Basic_Plugin
