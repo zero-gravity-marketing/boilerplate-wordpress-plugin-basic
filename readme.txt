@@ -1,7 +1,7 @@
 === ZGM Basic ===
 Contributors: zgm
 Stable tag: 1.0
-Tested up to: 4.9
+Tested up to: 5.0
 Requires at least: 4.6
 
 This is a basic plugin for quick functionality that doesn't belong in a theme
