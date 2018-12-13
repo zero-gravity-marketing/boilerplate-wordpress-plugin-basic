@@ -75,7 +75,7 @@ if ( !class_exists( 'ZGM_Basic_Plugin' ) ) {
         }
 
         /**
-         * Add <body> classes
+         * EXAMPLE: Add <body> classes
          */
         public function body_class($classes)
         {
@@ -88,7 +88,10 @@ if ( !class_exists( 'ZGM_Basic_Plugin' ) ) {
 
           return $classes;
         }
-        
+
+        /**
+         * EXAMPLE: Add Footer Scripts
+         */
         public function wp_footer()
         {
             echo "<script>console.log('wp_footer');</script>";
